@@ -36,16 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.text()) // 👈 recibimos como texto
         .then(text => {
             const data = JSON.parse(text); // lo convertimos a objeto
-            if (data.status === "success") {
-                alert("¡Gracias! Tu respuesta fue enviada.");
-                form.reset();
-            } else {
-                alert("Hubo un error al enviar la respuesta. Intenta nuevamente.");
-            }
         })
-        .catch(error => {
-            console.error(error);
-            alert("Hubo un error al enviar la respuesta. Intenta nuevamente!!.");
-        });
+        
     });
 });
