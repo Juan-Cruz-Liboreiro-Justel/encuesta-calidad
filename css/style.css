@@ -1,0 +1,218 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css);
+
+:root {
+    --primary: #003f63;
+    --secondary: #0e91ef;
+    --dark: #212121;
+    --light: #F3F3F3;
+    --gold:#F3C623;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body{
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+
+/* NAVBAR */
+.home{
+    z-index: 1;
+    width: 100%;
+  }
+  
+  .logo {
+    width: 8rem;
+    cursor: pointer;
+  }
+  
+  .navbar-menu{
+    margin: 0px auto;
+    background-color: var(--primary);
+  }
+  
+  
+  /* NAVBAR */
+
+
+
+  /* MAIN */
+
+  .main{
+    margin-top: 6rem;
+  }
+
+  .title{
+    font-size: 3rem;
+  }
+
+
+  /* MAIN */
+
+  /* COPIADO */
+
+  .rating-wrap{
+	margin: 20px 0;
+	padding: 15px;
+	border: 1px solid;
+	border-radius: 8px;
+}
+
+.center{
+	width: 162px; 
+	margin: auto;
+}
+
+h3, h1, p{
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+button{
+	display: block;
+	width: 100%;
+	padding: 10px;
+	border: none;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.rating{
+	border: none;
+	float: left;
+}
+
+.rating > input{
+	display: none;
+}
+
+.rating > label:before{
+	content: '\f005';
+	font-family: FontAwesome;
+	margin: 5px;
+	font-size: 1.5rem;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.rating > label{
+	float: right;
+	cursor: pointer;
+}
+
+.rating > input:checked ~ label,
+.rating:not(:checked) > label:hover, 
+.rating:not(:checked) > label:hover ~ label{
+	color: var(--gold);
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label,
+.rating > input:checked ~ label:hover ~ label{
+	color: var(--gold);
+}
+
+.rating-wrap{
+    margin: 20px 0;
+    padding: 20px; /* antes 15px */
+    border-radius: 8px;
+    min-height: 120px; /* más altura mínima */
+    display: flex;
+    flex-direction: column; /* ordena estrellas y texto en columna */
+    align-items: center; /* centra horizontalmente */
+    justify-content: center; /* centra verticalmente */
+}
+
+.rating-wrap h4 {
+    margin-top: 10px; /* separa texto de estrellas */
+    text-align: center;
+}
+
+.text {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    resize: vertical;
+    margin-top: 10px;
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+#nombre {
+  width: 10rem;
+  box-sizing: border-box; /* incluye padding y borde en el ancho total */
+}
+
+button{
+  color: var(--primary);
+  background-color: var(--light);
+  border: solid 1px var(--light);
+  font-size: 1.5rem;
+  font-weight: 600;
+
+}
+
+button:hover{
+  letter-spacing: 5px;
+  transition: 2s;
+}
+
+
+
+  /* COPIADO */
+
+
+/* FOOTER */
+
+footer {
+    color: var(--light);
+    font-size: 0.8rem;
+    letter-spacing: 3.5px;
+    bottom: 0px;
+    width: 100%;
+}
+
+.footer__txt {
+    margin: 35px 0;
+}
+
+
+.footer__txt a {
+    color: var(--light);
+    text-decoration: none;
+}
+
+.footer__txt a:hover{
+  color: var(--light);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+
+/* FOOTER */
+
+
+/* MOVIL */
+
+@media screen and (max-width: 768px){
+  .main{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  footer{
+    position: relative;
+  }
+}
+
+/* MOVIL */
+
