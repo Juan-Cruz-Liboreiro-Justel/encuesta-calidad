@@ -24,5 +24,33 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    
+    document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("survey-form");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Evita que el formulario recargue la página
+
+        const formData = new FormData(form);
+
+        fetch("https://script.google.com/macros/s/AKfycbyjrYJc3YcgW7ZJfbwfjD7INYrbmVQwMDFdoipPiHc05AHWqCWdIOvIdTaDfB7PEPOKOQ/exec", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "success") {
+                alert("¡Gracias! Tu respuesta fue enviada.");
+                form.reset(); // Resetea el formulario
+            } else {
+                alert("Hubo un error al enviar la respuesta. Intenta nuevamente.");
+            }
+        })
+        .catch(error => {
+            console.error(error);
+            alert("Hubo un error al enviar la respuesta. Intenta nuevamente.");
+        });
+    });
+});
+
+
 });
