@@ -133,7 +133,13 @@
       <button type="submit">Enviar</button>
     </form>
 
-    <iframe name="hidden_iframe" style="display:none;"></iframe>
+    <iframe name="hidden_iframe" style="display:none;" 
+        onload="if(this.contentWindow.location.href) { 
+                   alert('¡Gracias! Tu respuesta fue enviada.');
+                   document.getElementById('survey-form').reset(); 
+                 } else { 
+                   alert('Hubo un error al enviar la respuesta. Intenta nuevamente.'); 
+                 }"></iframe>
   </section>
 
 
@@ -165,3 +171,4 @@
 </body>
 
 </html>
+
