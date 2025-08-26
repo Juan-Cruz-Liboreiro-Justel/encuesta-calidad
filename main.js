@@ -24,11 +24,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    document.addEventListener("DOMContentLoaded", function () {
+    // Manejo del envío del formulario
     const form = document.getElementById("survey-form");
 
     form.addEventListener("submit", function (e) {
-        e.preventDefault(); // Evita que el formulario recargue la página
+        e.preventDefault(); // Evita recarga de página
 
         const formData = new FormData(form);
 
@@ -38,9 +38,10 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(response => response.json())
         .then(data => {
+            // Aquí mostramos alert y reseteamos formulario
             if (data.status === "success") {
                 alert("¡Gracias! Tu respuesta fue enviada.");
-                form.reset(); // Resetea el formulario
+                form.reset();
             } else {
                 alert("Hubo un error al enviar la respuesta. Intenta nuevamente.");
             }
@@ -50,7 +51,4 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Hubo un error al enviar la respuesta. Intenta nuevamente.");
         });
     });
-});
-
-
 });
