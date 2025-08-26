@@ -36,7 +36,7 @@
 
   <!-- MAIN -->
   <section class="container main">
-    <form id="survey-form" class="form" action="https://script.google.com/macros/s/AKfycbyjrYJc3YcgW7ZJfbwfjD7INYrbmVQwMDFdoipPiHc05AHWqCWdIOvIdTaDfB7PEPOKOQ/exec" method="POST" target="hidden_iframe">
+    <form id="survey-form" class="form" >
       <h1>Encuesta de Satisfacción</h1>
       <p>Su opinión nos ayuda a mejorar.</p>
 
@@ -44,7 +44,8 @@
       <div class="rating-wrap">
         <h3>Indique su nombre</h3>
         <div class="center">
-          <input type="text" name="nombre" id="nombre" class="text" rows="4" placeholder="Introduzca su nombre..." required>
+          <input type="text" name="nombre" id="nombre" class="text" rows="4" placeholder="Introduzca su nombre..."
+            required>
         </div>
       </div>
 
@@ -126,20 +127,14 @@
       <!-- Comentarios adicionales -->
       <div class="rating-wrap">
         <h3>¿Quiere dejarnos algun comentario?</h3>
-        <textarea name="comentarios" id="comentarios" class="text" rows="4" placeholder="Escriba aquí sus comentarios..."></textarea>
+        <textarea name="comentarios" id="comentarios" class="text" rows="4"
+          placeholder="Escriba aquí sus comentarios..."></textarea>
       </div>
 
 
       <button type="submit">Enviar</button>
     </form>
 
-    <iframe name="hidden_iframe" style="display:none;" 
-        onload="if(this.contentWindow.location.href) { 
-                   alert('¡Gracias! Tu respuesta fue enviada.');
-                   document.getElementById('survey-form').reset(); 
-                 } else { 
-                   alert('Hubo un error al enviar la respuesta. Intenta nuevamente.'); 
-                 }"></iframe>
   </section>
 
 
@@ -166,9 +161,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
     crossorigin="anonymous"></script>
-    <script src="main.js"></script>
+  <script src="main.js"></script>
 
 </body>
 
 </html>
-
