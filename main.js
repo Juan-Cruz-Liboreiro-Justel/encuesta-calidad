@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(error => {
             console.error(error);
-            alert("Hubo un error al enviar la respuesta. Intenta nuevamente.");
+            alert("Hubo un error al enviar la respuesta. Intenta nuevamente!!!!.");
         });
     });
 });
