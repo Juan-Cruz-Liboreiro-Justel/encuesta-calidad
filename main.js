@@ -1,8 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Preguntas del formulario
     const questions = ["q1", "q2", "q3", "q4", "q5"];
-
-    // Mensajes asociados a cada estrella
     const mensajes = {
         1: "nada conforme",
         2: "poco conforme",
@@ -11,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         5: "sumamente conforme"
     };
 
-    // Mostrar mensaje según estrella seleccionada
+    // Mostrar mensaje debajo de cada pregunta
     questions.forEach(q => {
         const stars = document.querySelectorAll(`input[name="${q}"]`);
         const output = document.querySelector(`#${q}-value`);
@@ -24,11 +21,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Manejo del envío del formulario
+    // Manejo del formulario
     const form = document.getElementById("survey-form");
 
     form.addEventListener("submit", function (e) {
-        e.preventDefault(); // Evita recarga de página
+        e.preventDefault();
 
         const formData = new FormData(form);
 
@@ -36,9 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
             method: "POST",
             body: formData
         })
-        .then(response => response.json())
-        .then(data => {
-            // Aquí mostramos alert y reseteamos formulario
+        .then(response => response.text()) // 👈 recibimos como texto
+        .then(text => {
+            const data = JSON.parse(text); // lo convertimos a objeto
             if (data.status === "success") {
                 alert("¡Gracias! Tu respuesta fue enviada.");
                 form.reset();
