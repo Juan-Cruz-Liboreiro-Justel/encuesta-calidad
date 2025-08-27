@@ -33,9 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
             method: "POST",
             body: formData
         })
-        .then(response => response.text()) // 👈 recibimos como texto
+        .then(response => response.text()) 
         .then(text => {
-            const data = JSON.parse(text); // lo convertimos a objeto
+            alert("✅ Formulario enviado correctamente");
+            location.reload(); // 🔄 se ejecuta justo después del alert
         })
         
     });
